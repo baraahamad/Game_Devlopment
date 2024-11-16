@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Assignment18
 {
-    // Step 2: Define a Struct Position
     public struct Position
     {
         public float X, Y, Z;
