@@ -1,0 +1,43 @@
+using UnityEngine;
+
+namespace Assignment27
+{
+    public class MethodDemonstration : MonoBehaviour
+    {
+        void Start()
+        {
+            int a = 5;
+            int b = 10;
+
+            CallByValue(a);
+            Debug.Log("Value of 'a' after CallByValue method: " + a); // 'a' will remain unchanged
+
+            CallByReference(ref b);
+            Debug.Log("Value of 'b' after CallByReference method: " + b); 
+
+            int result;
+            CallWithOut(out result);
+            Debug.Log("Value of 'result' after CallWithOut method: " + result); 
+        }
+
+        void CallByValue(int num)
+        {
+            num += 10; 
+            Debug.Log("Inside CallByValue method, num: " + num); 
+        }
+
+      
+        void CallByReference(ref int num)
+        {
+            num += 10; 
+            Debug.Log("Inside CallByReference method, num: " + num); 
+              }
+
+      
+        void CallWithOut(out int num)
+        {
+            num = 15; 
+            Debug.Log("Inside CallWithOut method, num: " + num); 
+              }
+    }
+}
