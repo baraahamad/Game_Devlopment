@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Assignment26
+{
+    public class CreatureManager : MonoBehaviour
+    {
+        void Start()
+        {
+            // Create instances of Kangaroo and Duck
+            Creature kangaroo = new Kangaroo();
+            Creature duck = new Duck();
+
+            // Create separate lists for each interface
+            List<Creature> creatures = new List<Creature> { kangaroo, duck };
+            List<IRunnable> runnableCreatures = new List<IRunnable> { (IRunnable)kangaroo, (IRunnable)duck };
+            List<IJumpable> jumpableCreatures = new List<IJumpable> { (IJumpable)kangaroo };
+            List<ISwimmable> swimmableCreatures = new List<ISwimmable> { (ISwimmable)duck };
+
+            // Call Speak() for each creature
+            foreach (Creature creature in creatures)
+            {
+                creature.Speak();
+            }
+
+            // Call Run() for each runnable creature
+            foreach (IRunnable runnable in runnableCreatures)
+            {
+                runnable.Run();
+            }
+
+            // Call Jump() for each jumpable creature
+            foreach (IJumpable jumpable in jumpableCreatures)
+            {
+                jumpable.Jump();
+            }
+
+            // Call Swim() for each swimmable creature
+            foreach (ISwimmable swimmable in swimmableCreatures)
+            {
+                swimmable.Swim();
+            }
+        }
+    }
+}
