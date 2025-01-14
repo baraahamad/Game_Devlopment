@@ -1,0 +1,15 @@
+namespace Assignment29
+{
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+ public class UtilitiesTester : MonoBehaviour
+    {
+        void Start()
+        {
+            Debug.Log("Sum: " + Utilities.Add(1, 2, 3, 4));
+            Debug.Log("Repeated String: " + "Hello".RepeatString(3));
+        }
+    }
+
+}

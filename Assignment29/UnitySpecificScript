@@ -1,0 +1,55 @@
+namespace Assignment29
+{
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+  public class UnitySpecificScript : MonoBehaviour
+    {
+        void OnEnable()
+        {
+            print("GameObject Enabled");
+        }
+
+        void OnDisable()
+        {
+            print("GameObject Disabled");
+        }
+
+        void Start()
+        {
+            print("Game started!");
+
+            GameObject target = GameObject.Find("TargetObject");
+            if (target)
+                print($"Found object by name: {target.name}");
+            else
+                print("No TargetObject found.");
+
+            GameObject joker = GameObject.FindGameObjectWithTag("Joker");
+            if (joker)
+                print($"Found object by tag: {joker.name}");
+            else
+                print("No Joker object found.");
+
+            Light light = GameObject.FindObjectOfType<Light>();
+            if (light)
+                print($"Found object of type Light: {light.name}");
+            else
+                print("No Light object found.");
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                GameObject target = GameObject.Find("TargetObject");
+                if (target)
+                {
+                    target.SetActive(false);
+                    print("TargetObject deactivated!");
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,21 @@
+namespace Assignment29
+{
+    using System;
+    using UnityEngine;
+    public class BasicsScript : MonoBehaviour
+    {
+        void Start()
+        {
+            var number = 5;
+            var message = "Hello, Unity!";
+            var isUnityAwesome = true;
+
+            string parity = (number % 2 == 0) ? "even" : "odd";
+            Debug.Log($"The number {number} is {parity}.");
+
+            Debug.Log("Current Date: " + DateTime.Now.ToString("yyyy-MM-dd"));
+            Debug.Log("Current Time: " + DateTime.Now.ToString("HH:mm:ss"));
+            Debug.Log("Current Day: " + DateTime.Now.DayOfWeek);
+        }
+    }
+}

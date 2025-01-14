@@ -1,0 +1,15 @@
+namespace Assignment29
+{
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CustomObjectTester : MonoBehaviour
+{
+     void Start()
+        {
+            CustomObject obj = new CustomObject(1, "Baraa Hamad");
+            print(obj);
+        }
+}
+}
